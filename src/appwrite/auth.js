@@ -37,11 +37,7 @@ export class AuthService {
 	}
 
 	async createAuthSession(provider) {
-		this.account.createOAuth2Session(
-			provider,
-			"https://tasknexus.vercel.app/profile",
-			"https://tasknexus.vercel.app/auth"
-		);
+		this.account.createOAuth2Session(provider, "/profile", "/auth");
 	}
 
 	async isLoggedIn() {
