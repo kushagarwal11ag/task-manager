@@ -39,8 +39,8 @@ export class AuthService {
 	async createAuthSession(provider) {
 		this.account.createOAuth2Session(
 			provider,
-			"/profile",
-			"/"
+			"https://tasknexus.vercel.app/profile",
+			"https://tasknexus.vercel.app/auth"
 		);
 	}
 
