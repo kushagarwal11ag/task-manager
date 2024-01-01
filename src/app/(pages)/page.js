@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import useAuth from "@/context/useAuth";
-
-import Auth from "./auth/page";
 import Loader from "@/files/Loader";
 
 const Home = () => {
@@ -22,7 +20,7 @@ const Home = () => {
 			router.push("/auth");
 			setLoader(false);
 		}
-	}, [authStatus]);
+	}, [authStatus, router]);
 
 	return loader ? <Loader /> : <></>;
 };

@@ -6,7 +6,7 @@ import loader from "@/components/css/Loader.module.css";
 
 import gif from "../../public/spinner.gif";
 
-const page = () => {
+const Load = () => {
 	const loadingArr = [
 		"Preparing your task manager...",
 		"Getting things ready for you...",
@@ -32,4 +32,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default Load;

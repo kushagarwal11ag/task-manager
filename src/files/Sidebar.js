@@ -13,7 +13,7 @@ import NotificationSVG from "@/components/icons/notification";
 import SettingSVG from "@/components/icons/setting";
 
 import kushal from "../../../../../../kushal.jpeg";
-const index = () => {
+const Sidebar = () => {
 	const [hovered, setHovered] = useState(false);
 	const [activeItem, setActiveItem] = useState("Task");
 
@@ -137,4 +137,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default Sidebar;

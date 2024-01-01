@@ -245,7 +245,7 @@ const Auth = () => {
 					<div className={auth.authMode}>
 						{loginEnabled ? (
 							<>
-								Don't have an account?{" "}
+								Don&apos;t have an account?{" "}
 								<span
 									onClick={() => {
 										clearFields();
