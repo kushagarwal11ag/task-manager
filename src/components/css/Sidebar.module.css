@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  width: 5rem;
+  height: 100vh;
+  background-color: white;
+  color: #898e99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: width 0.3s;
+  font-family: "Raleway", sans-serif;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.container .icon {
+  transform: scale(1.5);
+}
+.container .siteNavigation,
+.container .userActions {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+.container .header {
+  background-color: #f0f1f2;
+}
+.container .navigationList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.container .tasks {
+  filter: invert(54%) sepia(68%) saturate(6617%) hue-rotate(204deg) brightness(100%) contrast(96%);
+}
+.container .userProfile {
+  display: flex;
+  gap: 1rem;
+}
+.container .avatarContainer {
+  position: relative;
+  display: inline-block;
+}
+.container .avatarContainer .avatar {
+  width: 3rem;
+  height: 3rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 3px solid #f4ebff;
+  border-radius: 100%;
+}
+.container .avatarContainer .avatarStatus {
+  width: 15px;
+  height: 15px;
+  background: #4ed17e;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  border-radius: 100%;
+}
+
+.container:hover {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 40%;
+  align-items: flex-start;
+  z-index: 100;
+}
+.container:hover .siteNavigation,
+.container:hover .userActions {
+  align-items: flex-start;
+}
+.container:hover .header {
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3036;
+  white-space: nowrap;
+}
+.container:hover .navigationList {
+  padding: 1rem;
+}
+.container:hover .navigationList .active {
+  color: #157bff;
+}
+.container:hover .iconContainer {
+  display: flex;
+  gap: 1rem;
+}
+.container:hover .userActions {
+  padding: 1rem;
+}
+.container:hover .userActions .userProfile .userDetails .avatarName {
+  font-weight: 500;
+  color: #2d3036;
+}
+.container:hover .userActions .userProfile .userDetails .avatarMail {
+  font-weight: 300;
+  color: #898e99;
+}/*# sourceMappingURL=Sidebar.module.css.map */

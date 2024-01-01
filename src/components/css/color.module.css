@@ -1,0 +1,215 @@
+.default {
+  color: #344054;
+}
+
+.yellow {
+  color: #b54708;
+}
+
+.orange {
+  color: #c4320a;
+}
+
+.red {
+  color: #b42318;
+}
+
+.purple {
+  color: #6941c6;
+}
+
+.green {
+  color: #027a48;
+}
+
+.navyBlue {
+  color: #363f72;
+}
+
+.lightBlue {
+  color: #026aa2;
+}
+
+.blue {
+  color: #175cd3;
+}
+
+.indigo {
+  color: #3538cd;
+}
+
+.pink {
+  color: #c11574;
+}
+
+.rose {
+  color: #c01048;
+}
+
+.defaultBg {
+  background-color: #344054;
+}
+
+.yellowBg {
+  background-color: #b54708;
+}
+
+.orangeBg {
+  background-color: #c4320a;
+}
+
+.redBg {
+  background-color: #b42318;
+}
+
+.purpleBg {
+  background-color: #6941c6;
+}
+
+.greenBg {
+  background-color: #027a48;
+}
+
+.navyBlueBg {
+  background-color: #363f72;
+}
+
+.lightBlueBg {
+  background-color: #026aa2;
+}
+
+.blueBg {
+  background-color: #175cd3;
+}
+
+.indigoBg {
+  background-color: #3538cd;
+}
+
+.pinkBg {
+  background-color: #c11574;
+}
+
+.roseBg {
+  background-color: #c01048;
+}
+
+.defaultWithBg {
+  background-color: #f2f4f7;
+  color: #344054;
+}
+
+.yellowWithBg {
+  background-color: #fef0c7;
+  color: #b54708;
+}
+
+.orangeWithBg {
+  background-color: #fff6ed;
+  color: #c4320a;
+}
+
+.redWithBg {
+  background-color: #fef3f2;
+  color: #b42318;
+}
+
+.purpleWithBg {
+  background-color: #f9f5ff;
+  color: #6941c6;
+}
+
+.greenWithBg {
+  background-color: #ecfdf3;
+  color: #027a48;
+}
+
+.navyBlueWithBg {
+  background-color: #f8f9fc;
+  color: #363f72;
+}
+
+.lightBlueWithBg {
+  background-color: #f0f9ff;
+  color: #026aa2;
+}
+
+.blueWithBg {
+  background-color: #eff8ff;
+  color: #175cd3;
+}
+
+.indigoWithBg {
+  background-color: #eef4ff;
+  color: #3538cd;
+}
+
+.pinkWithBg {
+  background-color: #fdf2fa;
+  color: #c11574;
+}
+
+.roseWithBg {
+  background-color: #fff1f3;
+  color: #c01048;
+}
+
+.defaultFilter {
+  filter: invert(24%) sepia(8%) saturate(1801%) hue-rotate(179deg) brightness(89%) contrast(91%);
+}
+
+.yellowFilter {
+  filter: invert(24%) sepia(100%) saturate(1669%) hue-rotate(11deg) brightness(95%) contrast(94%);
+}
+
+.orangeFilter {
+  filter: invert(16%) sepia(53%) saturate(4283%) hue-rotate(4deg) brightness(121%) contrast(92%);
+}
+
+.redFilter {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(54%) saturate(4215%) hue-rotate(355deg) brightness(97%) contrast(89%);
+}
+
+.purpleFilter {
+  filter: invert(27%) sepia(25%) saturate(7196%) hue-rotate(248deg) brightness(82%) contrast(86%);
+}
+
+.greenFilter {
+  filter: invert(35%) sepia(20%) saturate(2275%) hue-rotate(109deg) brightness(96%) contrast(98%);
+}
+
+.navyBlueFilter {
+  filter: invert(21%) sepia(71%) saturate(469%) hue-rotate(194deg) brightness(96%) contrast(93%);
+}
+
+.lightBlueFilter {
+  filter: invert(25%) sepia(99%) saturate(1393%) hue-rotate(178deg) brightness(92%) contrast(98%);
+}
+
+.blueFilter {
+  filter: invert(34%) sepia(66%) saturate(1615%) hue-rotate(194deg) brightness(86%) contrast(99%);
+}
+
+.indigoFilter {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(54%) saturate(5824%) hue-rotate(239deg) brightness(81%) contrast(99%);
+}
+
+.pinkFilter {
+  filter: invert(17%) sepia(63%) saturate(4691%) hue-rotate(313deg) brightness(87%) contrast(96%);
+}
+
+.roseFilter {
+  filter: invert(17%) sepia(87%) saturate(3652%) hue-rotate(329deg) brightness(79%) contrast(99%);
+}
+
+.yellowOnlyBg {
+  background-color: #fef0c7;
+}
+
+.greenOnlyBg {
+  background-color: #ecfdf3;
+}
+
+.purpleOnlyBg {
+  background-color: #f9f5ff;
+}/*# sourceMappingURL=color.module.css.map */

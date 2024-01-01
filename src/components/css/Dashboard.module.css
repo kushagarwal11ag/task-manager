@@ -1,0 +1,124 @@
+.dashboard {
+  margin-left: 6rem;
+}
+
+.boardTitleContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.boardTitleContainer .icon {
+  transform: scale(0.75);
+}
+.boardTitleContainer .avatarContainer {
+  display: flex;
+}
+.boardTitleContainer .avatarContainer .avatar {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f4ebff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.boardTitleContainer .avatarContainer .avatar:not(:first-child) {
+  margin-left: -10px;
+}
+.boardTitleContainer .avatarContainer .additionalMembers {
+  background-color: #d6e7fc;
+  color: #157bff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boardInformation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.boardInformation .boardName {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.boardInformation .boardName .boardTitle {
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.boardInformation .boardName .boardSettings {
+  padding: 0.25rem 0.5rem;
+  background-color: #d6e7fc;
+  display: flex;
+  gap: 0.75rem;
+  border-radius: 10px;
+}
+.boardInformation .boardName .boardSettings .editBoardTitle,
+.boardInformation .boardName .boardSettings .changeBoard {
+  background-color: transparent;
+  border: none;
+}
+
+.boardActions {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-between;
+}
+.boardActions .sort {
+  display: flex;
+  gap: 1rem;
+}
+.boardActions .boardButton {
+  display: flex;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.boardActions .iconText {
+  color: #898e99;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.boardActions .boardExtraActions {
+  display: flex;
+  gap: 1rem;
+}
+.boardActions .boardExtraActions .taskView {
+  border-left: 2px solid #898e99;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.boardActions .boardExtraActions .taskView .viewTasks {
+  border: none;
+  cursor: pointer;
+}
+
+.sectionContainer {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -ms-scroll-snap-type: inline mandatory;
+      scroll-snap-type: inline mandatory;
+}
+
+.gridColumn {
+  grid-auto-flow: column;
+  grid-auto-columns: 36%;
+  overflow-y: hidden;
+}
+
+.gridRow {
+  grid-auto-flow: row;
+  grid-auto-rows: 100%;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+}/*# sourceMappingURL=Dashboard.module.css.map */

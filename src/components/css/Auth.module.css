@@ -1,0 +1,135 @@
+.main {
+  background-color: #e6e6e6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 992px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media (min-width: 768px) {
+  .card {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contentBody {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.contentBody > * {
+  width: 100%;
+}
+
+.form {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.form .formStatusMessage {
+  text-align: center;
+}
+.form .success {
+  color: #027a48;
+  border-color: #027a48;
+}
+.form .error {
+  color: #b42318;
+  border-color: #b42318;
+}
+.form .submitButton {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: black;
+  color: #fff6ed;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+.form .submitButton:hover {
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+}
+
+.inputBox {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: black;
+  border: 1px solid #898e99;
+  border-radius: 10px;
+}
+.inputBox input {
+  all: unset;
+  width: 100%;
+}
+
+.socialLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.socialLogin .socialProvider {
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.socialLogin .socialProvider:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 250px) {
+  .socialLogin .socialProvider {
+    flex-direction: row;
+  }
+}
+.socialLogin .googleProvider {
+  background-color: white;
+  color: #344054;
+}
+.socialLogin .facebookProvider {
+  background-color: #3d6ad6;
+  color: white;
+}
+
+.authMode span {
+  cursor: pointer;
+  color: #c4320a;
+}
+.authMode span:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .image {
+    background-size: cover;
+    background-position: center;
+    background-image: url("/hourglass.jpg");
+    flex: 1;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}/*# sourceMappingURL=Auth.module.css.map */

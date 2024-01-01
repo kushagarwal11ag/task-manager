@@ -1,0 +1,138 @@
+.section {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 20px;
+  overflow-y: auto;
+  scroll-snap-align: start;
+  scrollbar-gutter: stable;
+}
+.section .sectionHeader {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section .sectionHeader .sectionDetails {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.section .sectionHeader .sectionDetails .coloredEllipse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.section .sectionHeader .sectionDetails .sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.section .sectionHeader .sectionDetails .taskCount {
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.section .horizontalRule {
+  min-width: 100%;
+  min-height: 3px;
+  border-radius: 20px;
+}
+.section .taskContainer {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.defaultScrollbar {
+  scrollbar-color: #344054 transparent;
+}
+.defaultScrollbar::-webkit-scrollbar-thumb {
+  background: #344054;
+}
+
+.yellowScrollbar {
+  scrollbar-color: #b54708 transparent;
+}
+.yellowScrollbar::-webkit-scrollbar-thumb {
+  background: #b54708;
+}
+
+.orangeScrollbar {
+  scrollbar-color: #c4320a transparent;
+}
+.orangeScrollbar::-webkit-scrollbar-thumb {
+  background: #c4320a;
+}
+
+.redScrollbar {
+  scrollbar-color: #b42318 transparent;
+}
+.redScrollbar::-webkit-scrollbar-thumb {
+  background: #b42318;
+}
+
+.purpleScrollbar {
+  scrollbar-color: #6941c6 transparent;
+}
+.purpleScrollbar::-webkit-scrollbar-thumb {
+  background: #6941c6;
+}
+
+.greenScrollbar {
+  scrollbar-color: #027a48 transparent;
+}
+.greenScrollbar::-webkit-scrollbar-thumb {
+  background: #027a48;
+}
+
+.navyBlueScrollbar {
+  scrollbar-color: #363f72 transparent;
+}
+.navyBlueScrollbar::-webkit-scrollbar-thumb {
+  background: #363f72;
+}
+
+.lightBlueScrollbar {
+  scrollbar-color: #026aa2 transparent;
+}
+.lightBlueScrollbar::-webkit-scrollbar-thumb {
+  background: #026aa2;
+}
+
+.blueScrollbar {
+  scrollbar-color: #175cd3 transparent;
+}
+.blueScrollbar::-webkit-scrollbar-thumb {
+  background: #175cd3;
+}
+
+.indigoScrollbar {
+  scrollbar-color: #3538cd transparent;
+}
+.indigoScrollbar::-webkit-scrollbar-thumb {
+  background: #3538cd;
+}
+
+.pinkScrollbar {
+  scrollbar-color: #c11574 transparent;
+}
+.pinkScrollbar::-webkit-scrollbar-thumb {
+  background: #c11574;
+}
+
+.roseScrollbar {
+  scrollbar-color: #c01048 transparent;
+}
+.roseScrollbar::-webkit-scrollbar-thumb {
+  background: #c01048;
+}/*# sourceMappingURL=Section.module.css.map */

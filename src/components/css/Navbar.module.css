@@ -1,0 +1,55 @@
+.container {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 6rem;
+  right: 0;
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+.container .header {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f4ebff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.modalOverlay {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+  display: grid;
+}
+@media (min-width: 375px) {
+  .modalOverlay {
+    left: auto;
+    width: 20rem;
+    border-radius: 20px;
+  }
+}
+.modalOverlay .close {
+  all: unset;
+  cursor: pointer;
+  justify-self: end;
+}
+.modalOverlay .close > * {
+  stroke: black;
+}
+.modalOverlay .modalContent {
+  padding: 1rem;
+}/*# sourceMappingURL=Navbar.module.css.map */
