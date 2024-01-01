@@ -11,7 +11,7 @@ import Loader from "@/files/Loader";
 import navbar from "@/components/css/Navbar.module.css";
 
 import CloseSVG from "@/components/icons/close";
-import kushal from "../../../../../../kushal.jpeg";
+import avatar from "../../public/avatar.jpg";
 
 const Navbar = () => {
 	const router = useRouter();
@@ -69,7 +69,7 @@ const Navbar = () => {
 			<nav className={navbar.container}>
 				<header>Hello {user.name}</header>
 				<Image
-					src={kushal}
+					src={avatar}
 					className={navbar.avatar}
 					alt="User Avatar"
 					ref={buttonRef}

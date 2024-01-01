@@ -1,5 +1,6 @@
 .dashboard {
   margin-left: 6rem;
+  margin-top: 5rem;
 }
 
 .boardTitleContainer {
@@ -16,6 +17,8 @@
 .boardTitleContainer .avatarContainer .avatar {
   width: 50px;
   height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 3px solid #f4ebff;
   border-radius: 50%;
   overflow: hidden;

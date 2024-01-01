@@ -5,7 +5,7 @@ import task from "@/components/css/Task.module.css";
 
 import MessageSVG from "@/components/icons/message";
 import MenuSVG from "@/components/icons/menu";
-import kushal from "../../../../../../kushal.jpeg";
+import avatar from "../../public/avatar.jpg";
 
 import Label from "@/files/Label";
 
@@ -31,17 +31,17 @@ const Task = ({ taskTitle }) => {
 			<div className={task.taskFooter}>
 				<div className={task.avatarContainer}>
 					<Image
-						src={kushal}
+						src={avatar}
 						className={task.avatar}
 						alt="User Avatar"
 					/>
 					<Image
-						src={kushal}
+						src={avatar}
 						className={task.avatar}
 						alt="User Avatar"
 					/>
 					<Image
-						src={kushal}
+						src={avatar}
 						className={task.avatar}
 						alt="User Avatar"
 					/>

@@ -43,6 +43,8 @@
 .taskCard .taskFooter .avatarContainer .avatar {
   width: 30px;
   height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 3px solid #f4ebff;
   border-radius: 50%;
   overflow: hidden;

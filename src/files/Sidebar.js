@@ -12,7 +12,7 @@ import MessageSVG from "@/components/icons/message";
 import NotificationSVG from "@/components/icons/notification";
 import SettingSVG from "@/components/icons/setting";
 
-import kushal from "../../../../../../kushal.jpeg";
+import avatar from "../../public/avatar.jpg";
 const Sidebar = () => {
 	const [hovered, setHovered] = useState(false);
 	const [activeItem, setActiveItem] = useState("Task");
@@ -110,7 +110,7 @@ const Sidebar = () => {
 					<ul className={sidebar.userProfile}>
 						<li className={sidebar.avatarContainer}>
 							<Image
-								src={kushal}
+								src={avatar}
 								className={sidebar.avatar}
 								alt="User Avatar"
 							/>

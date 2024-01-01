@@ -15,7 +15,7 @@ import EditSVG from "@/components/icons/edit";
 import StackSVG from "@/components/icons/stack";
 import BoardSVG from "@/components/icons/board";
 
-import kushal from "../../../../../../kushal.jpeg";
+import avatar from "../../public/avatar.jpg";
 
 const Dashboard = () => {
 	const [sectionDirection, setSectionDirection] = useState("board");
@@ -44,32 +44,32 @@ const Dashboard = () => {
 					</section>
 					<section className={dashboard.avatarContainer}>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
 						<Image
-							src={kushal}
+							src={avatar}
 							className={dashboard.avatar}
 							alt="User Avatar"
 						/>
