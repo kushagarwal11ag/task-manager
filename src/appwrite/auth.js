@@ -39,8 +39,8 @@ export class AuthService {
 	async createAuthSession(provider) {
 		this.account.createOAuth2Session(
 			provider,
-			"http://localhost:3000/profile",
-			"http://localhost:3000/"
+			"/profile",
+			"/"
 		);
 	}
 
