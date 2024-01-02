@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import useAuth from "@/context/useAuth";
+import useAuth from "@/context/auth/useAuth";
 import { useRouter } from "next/navigation";
 
 const ProtectedLayout = ({ children }) => {

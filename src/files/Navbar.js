@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import authService from "@/appwrite/auth";
-import useAuth from "@/context/useAuth";
+import useAuth from "@/context/auth/useAuth";
 
 import Loader from "@/files/Loader";
 

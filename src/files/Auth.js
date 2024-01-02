@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 import authService from "@/appwrite/auth";
-import useAuth from "@/context/useAuth";
+import useAuth from "@/context/auth/useAuth";
 
 import auth from "@/components/css/Auth.module.css";
 

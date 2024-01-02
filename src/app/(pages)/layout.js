@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import authService from "@/appwrite/auth";
-import { AuthProvider } from "@/context/authContext";
+import { AuthProvider } from "@/context/auth/authContext";
 
 import Loader from "@/files/Loader";
 

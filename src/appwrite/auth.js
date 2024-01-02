@@ -38,10 +38,11 @@ export class AuthService {
 
 	async createAuthSession(provider) {
 		const currentDomain = process.env.NEXT_PUBLIC_WEBSITE_URL;
-		console.log(currentDomain);
-		console.log(`${currentDomain}/profile`);
-		console.log(`${currentDomain}/auth`);
-		this.account.createOAuth2Session(provider, `${currentDomain}/profile`, `${currentDomain}/auth`);
+		this.account.createOAuth2Session(
+			provider,
+			`${currentDomain}/profile`,
+			`${currentDomain}/auth`
+		);
 	}
 
 	async isLoggedIn() {

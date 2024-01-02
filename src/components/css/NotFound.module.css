@@ -1,0 +1,86 @@
+.main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../../public/error404background.svg");
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 50% 50%;
+  justify-items: center;
+  align-items: center;
+}
+.content > * {
+  padding: 2rem;
+}
+@media (min-width: 576px) {
+  .content {
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../../public/error404.svg");
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.text .textHeader {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .text .textHeader {
+    font-size: 4rem;
+  }
+}
+.text .textDetails {
+  color: #88e3ad;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .text .textDetails {
+    font-size: 2rem;
+  }
+}
+.text .textButton {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #92e3a9;
+  color: #263238;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 30px;
+}
+@media (min-width: 768px) {
+  .text .textButton {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 576px) {
+  .text {
+    align-items: flex-start;
+  }
+}/*# sourceMappingURL=NotFound.module.css.map */
