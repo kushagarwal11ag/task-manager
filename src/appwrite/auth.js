@@ -37,7 +37,8 @@ export class AuthService {
 	}
 
 	async createAuthSession(provider) {
-		this.account.createOAuth2Session(provider, "/profile", "/auth");
+		const currentDomain = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+		this.account.createOAuth2Session(provider, `${currentDomain}/profile`, `${currentDomain}/auth`);
 	}
 
 	async isLoggedIn() {
