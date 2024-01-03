@@ -1,40 +1,33 @@
-.main {
-  background-color: #e6e6e6;
+.card {
   min-height: 100vh;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.card {
-  max-width: 992px;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media (min-width: 768px) {
   .card {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 30% 70%;
   }
 }
 
 .contentBody {
-  padding: 2rem;
-  flex: 1;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
-.contentBody > * {
-  width: 100%;
+@media (min-width: 768px) {
+  .contentBody > * {
+    width: 100%;
+  }
 }
 
 .form {
-  padding-top: 1rem;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -63,6 +56,11 @@
   background-color: transparent;
   color: black;
   border: 2px solid black;
+}
+@media (min-width: 768px) {
+  .form {
+    width: 20rem;
+  }
 }
 
 .inputBox {
@@ -122,14 +120,18 @@
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
-  .image {
-    background-size: cover;
-    background-position: center;
-    background-image: url("/hourglass.jpg");
-    flex: 1;
-    border-radius: 20px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
+.image {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/hourglass.jpg");
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=Auth.module.css.map */

@@ -3,30 +3,32 @@ import Image from "next/image";
 
 import task from "@/components/css/Task.module.css";
 
+import Label from "@/files/Label";
+
 import MessageSVG from "@/components/icons/message";
 import MenuSVG from "@/components/icons/menu";
 import avatar from "../../public/avatar.jpg";
 
-import Label from "@/files/Label";
-
-const Task = ({ taskTitle }) => {
+const Task = ({ title, content, labels }) => {
 	return (
 		<section className={task.taskCard}>
 			<div className={task.taskHeader}>
 				<div className={task.taskLabelGroup}>
-					<Label labelColor="pink" labelName="Testing" />
-					<Label labelColor="blue" labelName="Sales" />
+					{labels.map((label) => (
+						<Label
+							key={label.data}
+							labelColor={label.color}
+							labelName={label.data}
+						/>
+					))}
 				</div>
 				<div className={task.taskMenu}>
 					<MenuSVG />
 				</div>
 			</div>
 			<div className={task.taskBody}>
-				<div className={task.taskTitle}>{taskTitle}</div>
-				<p className={task.taskDescription}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Velit, modi?
-				</p>
+				<div className={task.taskTitle}>{title}</div>
+				<p className={task.taskDescription}>{content}</p>
 			</div>
 			<div className={task.taskFooter}>
 				<div className={task.avatarContainer}>

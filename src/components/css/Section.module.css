@@ -53,6 +53,11 @@
   overflow-y: auto;
 }
 
+.gif {
+  width: auto;
+  height: auto;
+}
+
 .defaultScrollbar {
   scrollbar-color: #344054 transparent;
 }

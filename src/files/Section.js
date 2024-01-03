@@ -1,11 +1,16 @@
 import React from "react";
+import Image from "next/image";
+
+import Task from "@/files/Task";
+
+import { TaskProvider } from "@/context/task/TaskContext";
+import useTask from "@/context/task/useTask";
 
 import section from "@/components/css/Section.module.css";
 import color from "@/components/css/color.module.css";
 
 import PlusSVG from "@/components/icons/plus";
-
-import Task from "@/files/Task";
+import emptyGif from "/public/empty.gif";
 
 const customColorConverted = {
 	default: "#344054",
@@ -22,9 +27,13 @@ const customColorConverted = {
 	rose: "#c01048",
 };
 
-const Section = ({ sectionTitle, customColor }) => {
+const Section = ({ id, title, customColor }) => {
+	const { tasks, addTask, deleteTask } = useTask();
+	const filteredTasks = tasks.filter((task) => task.sectionId === id);
+	const totalTasks = filteredTasks.length;
+
 	return (
-		<>
+		<TaskProvider>
 			<section
 				className={`${section.section} ${
 					color[customColor + "WithBg"]
@@ -37,15 +46,13 @@ const Section = ({ sectionTitle, customColor }) => {
 								color[customColor + "Bg"]
 							}`}
 						></div>
-						<div className={section.sectionTitle}>
-							{sectionTitle}
-						</div>
+						<div className={section.sectionTitle}>{title}</div>
 						<div
 							className={`${section.taskCount} ${
 								color[customColor + "Bg"]
 							}`}
 						>
-							2
+							{totalTasks}
 						</div>
 					</div>
 					<PlusSVG stroke={customColorConverted[customColor]} />
@@ -55,13 +62,28 @@ const Section = ({ sectionTitle, customColor }) => {
 						color[customColor + "Bg"]
 					}`}
 				/>
-				<section className={`${section.taskContainer} ${section[customColor + "Scrollbar"]}`}>
-					<Task taskTitle="Brainstorming" />
-					<Task taskTitle="Not in mood" />
-					<Task taskTitle="Not in mood" />
+				<section
+					className={`${section.taskContainer} ${
+						section[customColor + "Scrollbar"]
+					}`}
+				>
+					{totalTasks > 0 ? (
+						filteredTasks.map((task) => {
+							return (
+								<Task
+									key={task.id}
+									title={task.title}
+									content={task.description}
+									labels={task.labels}
+								/>
+							);
+						})
+					) : (
+						<Image src={emptyGif} className={section.gif} alt="No tasks added" />
+					)}
 				</section>
 			</section>
-		</>
+		</TaskProvider>
 	);
 };
 

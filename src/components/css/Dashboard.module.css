@@ -103,6 +103,7 @@
 }
 
 .sectionContainer {
+  margin: auto;
   padding: 1rem;
   display: grid;
   gap: 1rem;
@@ -110,6 +111,10 @@
   overscroll-behavior-inline: contain;
   -ms-scroll-snap-type: inline mandatory;
       scroll-snap-type: inline mandatory;
+}
+.sectionContainer .gif {
+  width: auto;
+  height: auto;
 }
 
 .gridColumn {

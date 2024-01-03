@@ -14,7 +14,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="#">
+  <a href="https://tasknexus.vercel.app/">
     <img src="public/main.gif" alt="Logo" width="80" height="80">
   </a>
 
@@ -23,14 +23,7 @@
   <p align="center">
     Collaborate, Coordinate, Conquer.
     <br />
-    <a href="#"><strong>Visit website »</strong></a>
-    <!-- <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
+    <a href="https://tasknexus.vercel.app/"><strong>Visit website »</strong></a>
   </p>
 </div>
 
@@ -67,11 +60,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://tasknexus.vercel.app/)
 
-Your project will allow users to securely log in, create, and modify tasks, fostering collaboration by enabling users to chat and work together. It's a feature-packed solution enhancing productivity and teamwork. Keep rocking those development skills! 🚀
+Trackio (A nexus of tasks) will allow users to securely log in, create, and modify tasks, fosters collaboration by enabling users to chat and work together. It's a feature-packed solution enhancing productivity and teamwork.
 
-Here's why:
+Features:
 * Secure user login and sign-up.
 * Users can create, view, update and delete tasks. 
 * Fostering collaboration by enabling users to chat and work together.
@@ -82,50 +75,35 @@ Here's why:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+These are the main technologies used to build the project
 
 * [![Next][Next.js]][Next-url]
-* [![Appwrite][Appwrite.io]][React-url]
+* [![Appwrite][Appwrite.io]][Appwrite.io]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# Rest of the readme will be updated next time!
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you want to clone to study, modify or use this application, follow the steps mentioned below.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Nodejs (my version: 18.17.1)
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+1. Follow the documentation mentioned here: [*Document link*](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# Rest of the readme will be updated next time!
 
 
 <!-- USAGE EXAMPLES -->

@@ -13,7 +13,24 @@ import PassSVG from "@/components/icons/password";
 import GoogleSVG from "@/components/icons/google";
 import FacebookSVG from "@/components/icons/facebook";
 
+const useWindowSize = () => {
+	const [windowSize, setWindowSize] = useState(undefined);
+
+	useEffect(() => {
+		function handleResize() {
+			setWindowSize(window.innerWidth);
+		}
+		window.addEventListener("resize", handleResize);
+		handleResize();
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+	return windowSize;
+};
+
 const Auth = () => {
+	const videoSrc = "/books.webm";
+	const windowSize = useWindowSize();
+
 	const router = useRouter();
 	const { setAuthStatus } = useAuth();
 
@@ -23,10 +40,13 @@ const Auth = () => {
 		password: "",
 	});
 
-	const [loader, setLoader] = useState("");
-	const [formStatus, setFormStatus] = useState("");
-	const [error, setError] = useState("");
+	const [status, setStatus] = useState({
+		loader: "",
+		formStatus: "",
+		error: "",
+	});
 	const [loginEnabled, setLoginEnabled] = useState(true);
+	const [videoError, setVideoError] = useState(false);
 
 	const nameRef = useRef(null);
 	const emailRef = useRef(null);
@@ -38,7 +58,7 @@ const Auth = () => {
 			email: "",
 			password: "",
 		});
-	}, [error]);
+	}, [status.error]);
 
 	const onChange = (event) => {
 		setCredentials({
@@ -49,7 +69,7 @@ const Auth = () => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		setLoader("loading");
+		setStatus((prevStatus) => ({ ...prevStatus, loader: "loading" }));
 		try {
 			let session;
 			if (loginEnabled) {
@@ -67,22 +87,24 @@ const Auth = () => {
 				const userData = await authService.getCurrentUser();
 				if (userData) {
 					setAuthStatus(true);
-					setLoader("loaded");
-					setFormStatus("Authentication success");
-					setError("success");
+					setStatus({
+						loader: "loaded",
+						formStatus: "Authentication success",
+						error: "success",
+					});
 					router.push("/profile");
 				}
 			}
 		} catch (error) {
-			setFormStatus(error.message);
-			setError("error");
-			setLoader("");
+			setStatus({
+				loader: "",
+				formStatus: error.message,
+				error: "error",
+			});
 		}
 	};
 	const clearFields = async () => {
-		setLoader("");
-		setFormStatus("");
-		setError("");
+		setStatus({ loader: "", formStatus: "", error: "" });
 		setCredentials({
 			name: "",
 			email: "",
@@ -91,30 +113,47 @@ const Auth = () => {
 	};
 
 	return (
-		<main className={auth.main}>
+		<>
 			<section className={auth.card}>
-				<div className={auth.image}></div>
+				{windowSize >= 768 && (
+					<>
+						{!videoError ? (
+							<video
+								autoPlay
+								muted
+								loop
+								className={auth.video}
+								onError={() => setVideoError(true)}
+							>
+								<source src={videoSrc} type="video/webm" />
+								Your browser does not support HTML5 video.
+							</video>
+						) : (
+							<div className={auth.image}></div>
+						)}
+					</>
+				)}
 				<div className={auth.contentBody}>
 					<form className={auth.form} onSubmit={handleSubmit}>
-						{formStatus && (
+						{status.formStatus && (
 							<p
 								className={`${auth.formStatusMessage} ${
-									error === "error"
+									status.error === "error"
 										? auth.error
-										: error === "success"
+										: status.error === "success"
 										? auth.success
 										: ""
 								}`}
 							>
-								{formStatus}
+								{status.formStatus}
 							</p>
 						)}
 						{!loginEnabled && (
 							<div
 								className={`${auth.inputBox} ${
-									error === "error"
+									status.error === "error"
 										? auth.error
-										: error === "success"
+										: status.error === "success"
 										? auth.success
 										: ""
 								}`}
@@ -124,9 +163,9 @@ const Auth = () => {
 							>
 								<UserSVG
 									stroke={
-										error === "error"
+										status.error === "error"
 											? "#b42318"
-											: error === "success"
+											: status.error === "success"
 											? "#027a48"
 											: "#898e99"
 									}
@@ -145,9 +184,9 @@ const Auth = () => {
 						)}
 						<div
 							className={`${auth.inputBox} ${
-								error === "error"
+								status.error === "error"
 									? auth.error
-									: error === "success"
+									: status.error === "success"
 									? auth.success
 									: ""
 							}`}
@@ -157,9 +196,9 @@ const Auth = () => {
 						>
 							<MailSVG
 								stroke={
-									error === "error"
+									status.error === "error"
 										? "#b42318"
-										: error === "success"
+										: status.error === "success"
 										? "#027a48"
 										: "#898e99"
 								}
@@ -177,9 +216,9 @@ const Auth = () => {
 						</div>
 						<div
 							className={`${auth.inputBox} ${
-								error === "error"
+								status.error === "error"
 									? auth.error
-									: error === "success"
+									: status.error === "success"
 									? auth.success
 									: ""
 							}`}
@@ -189,9 +228,9 @@ const Auth = () => {
 						>
 							<PassSVG
 								stroke={
-									error === "error"
+									status.error === "error"
 										? "#b42318"
-										: error === "success"
+										: status.error === "success"
 										? "#027a48"
 										: "#898e99"
 								}
@@ -211,9 +250,9 @@ const Auth = () => {
 							className={auth.submitButton}
 							style={{ textAlign: "center" }}
 						>
-							{loader === "loading"
+							{status.loader === "loading"
 								? "Authenticating"
-								: loader === "loaded"
+								: status.loader === "loaded"
 								? "Authenticated"
 								: "Submit"}
 						</button>
@@ -271,7 +310,7 @@ const Auth = () => {
 					</div>
 				</div>
 			</section>
-		</main>
+		</>
 	);
 };
 
