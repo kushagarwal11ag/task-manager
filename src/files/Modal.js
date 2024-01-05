@@ -153,6 +153,7 @@ const Modal = ({ mode, isOpen, onClose }) => {
 									<section className={modal.labelContainer}>
 										{taskCredentials.labels.map((label) => (
 											<div
+												key={label.data}
 												className={
 													color[
 														label.color + "WithBg"
