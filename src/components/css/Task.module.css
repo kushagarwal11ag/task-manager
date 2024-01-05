@@ -25,7 +25,7 @@
   justify-self: end;
 }
 .taskCard .taskHeader .taskMenu :hover {
-  fill: black;
+  filter: brightness(0);
 }
 .taskCard .taskBody .taskTitle {
   font-size: 1.5rem;

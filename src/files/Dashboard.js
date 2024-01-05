@@ -8,7 +8,7 @@ import Section from "@/files/Section";
 import { TaskProvider } from "@/context/task/TaskContext";
 import useSection from "@/context/section/useSection";
 
-import Modal from "./Modal";
+import SectionModal from "./modal/SectionModal";
 
 import dashboard from "@/components/css/Dashboard.module.css";
 
@@ -196,7 +196,7 @@ const Dashboard = () => {
 					</section>
 				</header>
 			</main>
-			<Modal mode="Section" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+			<SectionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</TaskProvider>
 	);
 };

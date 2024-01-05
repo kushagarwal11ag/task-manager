@@ -1,0 +1,38 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.modal .close {
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.themeContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.themeContainer .coloredEllipse {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 50%;
+}/*# sourceMappingURL=SectionModal.module.css.map */

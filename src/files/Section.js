@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Image from "next/image";
 
-import Modal from "./Modal";
+import TaskModal from "./modal/TaskModal";
 import Task from "@/files/Task";
 
 import useTask from "@/context/task/useTask";
@@ -28,7 +28,7 @@ const customColorConverted = {
 };
 
 const Section = ({ id, title, customColor }) => {
-	const { tasks, addTask, deleteTask } = useTask();
+	const { tasks } = useTask();
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const filteredTasks = tasks.filter((task) => task.sectionId === id);
 	const totalTasks = filteredTasks.length;
@@ -92,8 +92,8 @@ const Section = ({ id, title, customColor }) => {
 					)}
 				</section>
 			</section>
-			<Modal
-				mode="Task"
+			<TaskModal
+				sId={id}
 				isOpen={isModalOpen}
 				onClose={() => setIsModalOpen(false)}
 			/>
