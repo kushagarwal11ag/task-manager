@@ -5,8 +5,10 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import Section from "@/files/Section";
 
-import { SectionProvider } from "@/context/section/SectionContext";
+import { TaskProvider } from "@/context/task/TaskContext";
 import useSection from "@/context/section/useSection";
+
+import Modal from "./Modal";
 
 import dashboard from "@/components/css/Dashboard.module.css";
 
@@ -14,6 +16,8 @@ import CalendarSVG from "@/components/icons/calendar";
 import ArrowDownSVG from "@/components/icons/arrowDown";
 import FilterSVG from "@/components/icons/filter";
 import ShareSVG from "@/components/icons/share";
+import PlusSVG from "@/components/icons/plus";
+import SectionSVG from "@/components/icons/section";
 import EditSVG from "@/components/icons/edit";
 import StackSVG from "@/components/icons/stack";
 import BoardSVG from "@/components/icons/board";
@@ -23,15 +27,16 @@ import avatar from "../../public/avatar.jpg";
 
 const Dashboard = () => {
 	const [sectionDirection, setSectionDirection] = useState("board");
-	const { sections, addSection, deleteSection } = useSection();
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const { sections, deleteSection } = useSection();
 
 	useEffect(() => {
-		if(!sections.length) setSectionDirection("stack");
+		if (!sections.length) setSectionDirection("stack");
 		else setSectionDirection("board");
-	}, [sections])
+	}, [sections]);
 
 	return (
-		<SectionProvider>
+		<TaskProvider>
 			<main className={dashboard.dashboard}>
 				<Navbar />
 				<header className={dashboard.boardTitleContainer}>
@@ -111,6 +116,16 @@ const Dashboard = () => {
 							</button>
 						</section>
 						<section className={dashboard.boardExtraActions}>
+							<button
+								className={dashboard.boardButton}
+								onClick={() => setIsModalOpen(true)}
+							>
+								<SectionSVG />
+								<span className={dashboard.iconText}>
+									Section
+								</span>
+								<PlusSVG className={dashboard.icon} />
+							</button>
 							<button className={dashboard.boardButton}>
 								<ShareSVG className={dashboard.icon} />
 								<span className={dashboard.iconText}>
@@ -122,7 +137,8 @@ const Dashboard = () => {
 								<button
 									className={dashboard.viewTasks}
 									onClick={() => {
-										sections.length && setSectionDirection("stack");
+										sections.length &&
+											setSectionDirection("stack");
 									}}
 								>
 									<StackSVG
@@ -136,7 +152,8 @@ const Dashboard = () => {
 								<button
 									className={dashboard.viewTasks}
 									onClick={() => {
-										sections.length && setSectionDirection("board");
+										sections.length &&
+											setSectionDirection("board");
 									}}
 								>
 									<BoardSVG
@@ -158,20 +175,29 @@ const Dashboard = () => {
 								: dashboard.gridRow
 						}`}
 					>
-						{sections.length ? sections.map((section) => {
-						return (
-							<Section
-								key={section.id}
-								id={section.id}
-								title={section.title}
-								customColor={section.theme}
+						{sections.length ? (
+							sections.map((section) => {
+								return (
+									<Section
+										key={section.id}
+										id={section.id}
+										title={section.title}
+										customColor={section.theme}
+									/>
+								);
+							})
+						) : (
+							<Image
+								src={emptyGif}
+								className={dashboard.gif}
+								alt="No tasks added"
 							/>
-						);
-					}) : <Image src={emptyGif} className={dashboard.gif} alt="No tasks added" />}
+						)}
 					</section>
 				</header>
 			</main>
-		</SectionProvider>
+			<Modal mode="Section" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+		</TaskProvider>
 	);
 };
 

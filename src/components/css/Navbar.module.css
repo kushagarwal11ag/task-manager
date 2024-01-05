@@ -1,9 +1,5 @@
 .container {
   padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 6rem;
-  right: 0;
   background-color: #ffffff;
   color: black;
   display: flex;

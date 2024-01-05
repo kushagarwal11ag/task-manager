@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
+import toast, { Toaster } from "react-hot-toast";
+
 import authService from "@/appwrite/auth";
 import useAuth from "@/context/auth/useAuth";
 
@@ -41,7 +43,6 @@ const Auth = () => {
 	});
 
 	const [status, setStatus] = useState({
-		loader: "",
 		formStatus: "",
 		error: "",
 	});
@@ -69,42 +70,46 @@ const Auth = () => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		setStatus((prevStatus) => ({ ...prevStatus, loader: "loading" }));
+		let sessionPromise;
 		try {
-			let session;
 			if (loginEnabled) {
-				session = await authService.login(credentials);
+				sessionPromise = authService.login(credentials);
 			} else {
-				session = await authService.createUserAccount(credentials);
+				sessionPromise = authService.createUserAccount(credentials);
 			}
 
+			toast.promise(sessionPromise, {
+				loading: "Authenticating...",
+				success: "Successfully Authenticated",
+				error: "Authentication Error",
+			});
+
+			await sessionPromise;
 			setCredentials({
 				name: "",
 				email: "",
 				password: "",
 			});
-			if (session) {
-				const userData = await authService.getCurrentUser();
-				if (userData) {
-					setAuthStatus(true);
-					setStatus({
-						loader: "loaded",
-						formStatus: "Authentication success",
-						error: "success",
-					});
-					router.push("/profile");
-				}
-			}
+
+			const userDataPromise = authService.getCurrentUser();
+			toast.promise(userDataPromise, {
+				loading: "Fetching user data...",
+				success: "Rerouting",
+				error: "Error fetching user data",
+			});
+			await userDataPromise;
+			setAuthStatus(true);
+			setStatus((prevStatus) => ({ ...prevStatus, error: "success" }));
+			router.push("/profile");
 		} catch (error) {
 			setStatus({
-				loader: "",
 				formStatus: error.message,
 				error: "error",
 			});
 		}
 	};
 	const clearFields = async () => {
-		setStatus({ loader: "", formStatus: "", error: "" });
+		setStatus({ formStatus: "", error: "" });
 		setCredentials({
 			name: "",
 			email: "",
@@ -114,6 +119,7 @@ const Auth = () => {
 
 	return (
 		<>
+			<Toaster />
 			<section className={auth.card}>
 				{windowSize >= 768 && (
 					<>
@@ -250,11 +256,7 @@ const Auth = () => {
 							className={auth.submitButton}
 							style={{ textAlign: "center" }}
 						>
-							{status.loader === "loading"
-								? "Authenticating"
-								: status.loader === "loaded"
-								? "Authenticated"
-								: "Submit"}
+							Submit
 						</button>
 					</form>
 					<section className={auth.socialLogin}>

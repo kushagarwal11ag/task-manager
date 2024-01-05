@@ -4,18 +4,13 @@ export const SectionContext = createContext({
 	sections: [
 		{
 			id: 1,
-			theme: "red",
 			title: "To Do",
+			theme: "red",
 		},
 		{
 			id: 2,
-			theme: "orange",
 			title: "In Progress",
-		},
-		{
-			id: 3,
-			theme: "default",
-			title: "Done",
+			theme: "orange",
 		},
 	],
 	addSection: () => {},

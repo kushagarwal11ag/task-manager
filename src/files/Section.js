@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 
+import Modal from "./Modal";
 import Task from "@/files/Task";
 
-import { TaskProvider } from "@/context/task/TaskContext";
 import useTask from "@/context/task/useTask";
 
 import section from "@/components/css/Section.module.css";
@@ -29,11 +29,12 @@ const customColorConverted = {
 
 const Section = ({ id, title, customColor }) => {
 	const { tasks, addTask, deleteTask } = useTask();
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const filteredTasks = tasks.filter((task) => task.sectionId === id);
 	const totalTasks = filteredTasks.length;
 
 	return (
-		<TaskProvider>
+		<>
 			<section
 				className={`${section.section} ${
 					color[customColor + "WithBg"]
@@ -55,7 +56,11 @@ const Section = ({ id, title, customColor }) => {
 							{totalTasks}
 						</div>
 					</div>
-					<PlusSVG stroke={customColorConverted[customColor]} />
+					<PlusSVG
+						stroke={customColorConverted[customColor]}
+						onClick={() => setIsModalOpen(true)}
+						style={{cursor: "pointer"}}
+					/>
 				</section>
 				<div
 					className={`${section.horizontalRule} ${
@@ -79,11 +84,20 @@ const Section = ({ id, title, customColor }) => {
 							);
 						})
 					) : (
-						<Image src={emptyGif} className={section.gif} alt="No tasks added" />
+						<Image
+							src={emptyGif}
+							className={section.gif}
+							alt="No tasks added"
+						/>
 					)}
 				</section>
 			</section>
-		</TaskProvider>
+			<Modal
+				mode="Task"
+				isOpen={isModalOpen}
+				onClose={() => setIsModalOpen(false)}
+			/>
+		</>
 	);
 };
 

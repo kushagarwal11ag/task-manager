@@ -45,7 +45,7 @@ export const TaskProvider = ({ children }) => {
 	const [tasks, setTasks] = useState(defaultTasks);
 
 	const addTask = (task) => {
-		setTasks([...tasks, task]);
+		setTasks([task, ...tasks]);
 	};
 
 	const deleteTask = (taskId) => {

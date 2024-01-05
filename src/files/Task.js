@@ -9,18 +9,18 @@ import MessageSVG from "@/components/icons/message";
 import MenuSVG from "@/components/icons/menu";
 import avatar from "../../public/avatar.jpg";
 
-const Task = ({ title, content, labels }) => {
+const Task = ({ title, content, labels=[] }) => {
 	return (
 		<section className={task.taskCard}>
 			<div className={task.taskHeader}>
 				<div className={task.taskLabelGroup}>
-					{labels.map((label) => (
+					{labels.length ? labels.map((label) => (
 						<Label
 							key={label.data}
 							labelColor={label.color}
 							labelName={label.data}
 						/>
-					))}
+					)): ""}
 				</div>
 				<div className={task.taskMenu}>
 					<MenuSVG />

@@ -21,7 +21,11 @@
   border-radius: 10px;
 }
 .taskCard .taskHeader .taskMenu {
+  cursor: pointer;
   justify-self: end;
+}
+.taskCard .taskHeader .taskMenu :hover {
+  fill: black;
 }
 .taskCard .taskBody .taskTitle {
   font-size: 1.5rem;
@@ -31,6 +35,10 @@
 }
 .taskCard .taskBody .taskDescription {
   color: #898e99;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .taskCard .taskFooter {
   display: flex;

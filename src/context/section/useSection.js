@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import SectionContext from "./SectionContext";
+import { SectionContext } from "./SectionContext";
 
 const useSection = () => {
 	const data = useContext(SectionContext);
