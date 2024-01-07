@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 import TaskModal from "./modal/TaskModal";
+import MenuModal from "./modal/MenuModal";
 import Task from "@/files/Task";
 
 import useTask from "@/context/task/useTask";
@@ -10,6 +11,7 @@ import section from "@/components/css/Section.module.css";
 import color from "@/components/css/color.module.css";
 
 import PlusSVG from "@/components/icons/plus";
+import MenuSVG from "@/components/icons/menu";
 import emptyGif from "/public/empty.gif";
 
 const customColorConverted = {
@@ -30,8 +32,38 @@ const customColorConverted = {
 const Section = ({ id, title, customColor }) => {
 	const { tasks } = useTask();
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
+	const [menuModalPosition, setMenuModalPosition] = useState({ top: 0, right: 0 });
+	const [strokeColor, setStrokeColor] = useState("#898e99");
 	const filteredTasks = tasks.filter((task) => task.sectionId === id);
 	const totalTasks = filteredTasks.length;
+
+	const menuRef = useRef(null);
+
+	const openMenuModal = () => {
+		if (menuRef.current) {
+			const rect = menuRef.current.getBoundingClientRect();
+			setMenuModalPosition({
+				top: rect.bottom + window.scrollY,
+            left: rect.right + window.scrollX
+			});
+		}
+		setIsMenuModalOpen(true);
+	};
+	const handleClickOutside = (event) => {
+		if (menuRef.current && !menuRef.current.contains(event.target)) {
+			setIsMenuModalOpen(false);
+		}
+	};
+	useEffect(() => {
+		if (isMenuModalOpen) {
+			document.addEventListener("mousedown", handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [isMenuModalOpen]);
 
 	return (
 		<>
@@ -56,11 +88,19 @@ const Section = ({ id, title, customColor }) => {
 							{totalTasks}
 						</div>
 					</div>
-					<PlusSVG
-						stroke={customColorConverted[customColor]}
-						onClick={() => setIsModalOpen(true)}
-						style={{cursor: "pointer"}}
-					/>
+					<div className={section.sectionAction}>
+						<PlusSVG
+							onMouseEnter={() =>
+								setStrokeColor(
+									customColorConverted[customColor]
+								)
+							}
+							onMouseLeave={() => setStrokeColor("#898e99")}
+							stroke={strokeColor}
+							onClick={() => setIsModalOpen(true)}
+						/>
+						<MenuSVG ref={menuRef} onClick={openMenuModal} />
+					</div>
 				</section>
 				<div
 					className={`${section.horizontalRule} ${
@@ -96,6 +136,12 @@ const Section = ({ id, title, customColor }) => {
 				sId={id}
 				isOpen={isModalOpen}
 				onClose={() => setIsModalOpen(false)}
+			/>
+			<MenuModal
+				ref={menuRef}
+				isOpen={isMenuModalOpen}
+				style={menuModalPosition}
+				onClose={() => setIsMenuModalOpen(false)}
 			/>
 		</>
 	);

@@ -20,35 +20,37 @@
   padding: 0 0.5rem;
   border-radius: 10px;
 }
-.taskCard .taskHeader .taskMenu {
+.taskCard .taskHeader > *:last-child {
   cursor: pointer;
   justify-self: end;
 }
-.taskCard .taskHeader .taskMenu :hover {
+.taskCard .taskHeader > *:last-child:hover {
   filter: brightness(0);
 }
-.taskCard .taskBody .taskTitle {
+
+.taskBody .taskTitle {
   font-size: 1.5rem;
   font-weight: 500;
   color: black;
   text-transform: capitalize;
 }
-.taskCard .taskBody .taskDescription {
+.taskBody .taskDescription {
   color: #898e99;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.taskCard .taskFooter {
+
+.taskFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.taskCard .taskFooter .avatarContainer {
+.taskFooter .avatarContainer {
   display: flex;
 }
-.taskCard .taskFooter .avatarContainer .avatar {
+.taskFooter .avatarContainer .avatar {
   width: 30px;
   height: 30px;
   -o-object-fit: cover;
@@ -57,20 +59,20 @@
   border-radius: 50%;
   overflow: hidden;
 }
-.taskCard .taskFooter .avatarContainer .avatar:not(:first-child) {
+.taskFooter .avatarContainer .avatar:not(:first-child) {
   margin-left: -10px;
 }
-.taskCard .taskFooter .additionalTaskInformation .taskComments {
+.taskFooter .additionalTaskInformation .taskComments {
   display: flex;
   align-items: center;
   gap: 0.25rem;
   color: #898e99;
   font-size: 0.75rem;
 }
-.taskCard .taskFooter .additionalTaskInformation .taskComments:hover {
+.taskFooter .additionalTaskInformation .taskComments:hover {
   cursor: pointer;
   color: #000000;
 }
-.taskCard .taskFooter .additionalTaskInformation .taskComments:hover .icon {
+.taskFooter .additionalTaskInformation .taskComments:hover .icon {
   filter: brightness(0);
 }/*# sourceMappingURL=Task.module.css.map */

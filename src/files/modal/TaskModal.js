@@ -34,7 +34,7 @@ const Modal = ({ sId, isOpen, onClose }) => {
 	});
 	const [labelCredentials, setLabelCredentials] = useState({
 		labelTitle: "",
-		labelTheme: "default",
+		labelTheme: "",
 	});
 	const [isLabelModalOpen, setIsLabelModalOpen] = useState(false);
 
@@ -61,7 +61,7 @@ const Modal = ({ sId, isOpen, onClose }) => {
 	const clearFieldsLabel = () => {
 		setLabelCredentials({
 			labelTitle: "",
-			labelTheme: "default",
+			labelTheme: "",
 		});
 	};
 
@@ -114,14 +114,16 @@ const Modal = ({ sId, isOpen, onClose }) => {
 					}}
 					className={modal.close}
 				/>
-				<button
-					className={modal.labelInput}
-					type="button"
-					onClick={setIsLabelModalOpen}
-				>
-					<div>Labels</div>
-					<PlusSVG stroke="#000" />
-				</button>
+				{themeLeft.length > 0 && (
+					<button
+						className={modal.labelInput}
+						type="button"
+						onClick={setIsLabelModalOpen}
+					>
+						<div>Labels</div>
+						<PlusSVG stroke="#000" />
+					</button>
+				)}
 				{isLabelModalOpen && (
 					<section className={modal.modalOverlay}>
 						<section className={modal.modal}>
@@ -195,6 +197,10 @@ const Modal = ({ sId, isOpen, onClose }) => {
 														)
 												),
 											}));
+											setThemeLeft((prevState) => [
+												...prevState,
+												label.color,
+											]);
 										}}
 									/>
 								</div>

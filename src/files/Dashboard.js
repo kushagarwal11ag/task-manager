@@ -38,7 +38,7 @@ const Dashboard = () => {
 	return (
 		<TaskProvider>
 			<main className={dashboard.dashboard}>
-				<Navbar />
+				{/* <Navbar /> */}
 				<header className={dashboard.boardTitleContainer}>
 					<section className={dashboard.boardInformation}>
 						<section className={dashboard.boardName}>

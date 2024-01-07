@@ -11,8 +11,8 @@
 .section .sectionHeader {
   padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 .section .sectionHeader .sectionDetails {
   display: flex;
@@ -38,6 +38,16 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+.section .sectionHeader .sectionAction {
+  display: flex;
+  gap: 1rem;
+}
+.section .sectionHeader .sectionAction > * {
+  cursor: pointer;
+}
+.section .sectionHeader .sectionAction > *:last-child:hover {
+  filter: brightness(0);
 }
 .section .horizontalRule {
   min-width: 100%;
