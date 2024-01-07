@@ -18,4 +18,5 @@ const SVGComponent = forwardRef((props, ref) => {
 		</svg>
 	);
 });
+SVGComponent.displayName = "SVGComponent";
 export default SVGComponent;
